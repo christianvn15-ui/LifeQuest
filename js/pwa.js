@@ -1,0 +1,1 @@
+export function registerSW(){if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('/pwa/service-worker.js').catch(e=>console.info('Offline support unavailable:',e.message));}

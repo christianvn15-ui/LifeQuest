@@ -1,0 +1,3 @@
+# Scaling and product boundaries
+
+The current project is a small local-first prototype, not a globally launch-ready million-user service. Firebase Spark quotas are finite and can change; check current Firebase pricing, regional availability, data-protection requirements, and provider terms before launch. To scale: define service-level objectives; load-test representative queries; paginate all feeds; keep documents small; use transactions or trusted server-side reward calculation; shard hot counters; control fan-out; add abuse controls, observability, backups, incident response, and staged rollouts. A million-user design needs threat modeling and privacy review, especially for children and health, faith, and relationship data.

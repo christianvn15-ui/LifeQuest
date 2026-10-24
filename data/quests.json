@@ -1,0 +1,5 @@
+[
+ {"id":"walk","name":"Take a refreshing walk","category":"Health","difficulty":"Easy","xp":20,"coins":5},
+ {"id":"read","name":"Read for 15 minutes","category":"Intelligence","difficulty":"Easy","xp":15,"coins":4},
+ {"id":"tidy","name":"Tidy one small space","category":"Discipline","difficulty":"Medium","xp":30,"coins":8}
+]
