@@ -4,7 +4,7 @@ Use `/users/{uid}` for the owner profile. Store user-owned collections below tha
 
 | Path | Suggested fields |
 |---|---|
-| `users/{uid}` | `displayName`, `username`, `country`, `language`, `timezone`, `roles[]`, `goals[]`, `createdAt`, `updatedAt` |
+| `users/{uid}` | `displayName`, `username`, `country`, `language`, `timezone`, `dateOfBirth` (private), `roles[]`, `goals[]`, `createdAt`, `updatedAt` |
 | `users/{uid}/avatars/current` | `skinTone`, `hairStyle`, `hairColor`, `eyeColor`, `clothing[]`, `accessories[]`, `animationPack`, `updatedAt` |
 | `users/{uid}/quests/{questId}` | `title`, `description`, `category`, `difficulty`, `xp`, `coins`, `dueAt`, `reminder`, `recurrence`, `notes`, `status`, `createdAt` |
 | `users/{uid}/chores/{choreId}` | `title`, `description`, `difficulty`, `xp`, `coins`, `reminder`, `repeatRules`, `imagePath`, `status` |

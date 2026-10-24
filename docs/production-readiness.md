@@ -15,7 +15,7 @@ LifeQuest currently runs as a local demo. These are the concrete additions requi
 2. Copy its web app configuration into `firebase/firebase-config.js`. These client identifiers are public; never paste service-account JSON or private keys into the site.
 3. Enable the authentication methods you plan to support and configure authorized domains, email verification, and recovery flows.
 4. Create Firestore in the correct region. Review and deploy the rules and indexes; test authorization as owner, another user, signed-out user, and administrator before enabling real data.
-5. Add a real app-auth module and connect sign-up, sign-in, sign-out, password reset, verification state, account deletion, and profile creation. None of these are implemented yet.
+5. The email/password sign-up, sign-in, sign-out, password reset, verification gate, and profile creation are implemented in `js/firebase.js` and require the Web App config. Still add OAuth providers if needed, account deletion, recovery/support workflows, and app-level sign-in protection review.
 6. Implement Firestore persistence and migration from the current local demo data. Use server timestamps, pagination, conflict handling, and offline synchronization deliberately.
 7. Move XP, coins, level changes, achievement grants, family approval, and admin actions to trusted backend code. A client can alter local storage and must never be allowed to award itself trusted rewards. Firebase Cloud Functions deployment requires Blaze; if staying Spark-only, do not issue competitive or redeemable rewards that need trusted server validation.
 8. Add and enforce App Check after validating production and preview domains. Add Storage only with validated upload types, sizes, and private paths.
@@ -30,7 +30,7 @@ LifeQuest currently runs as a local demo. These are the concrete additions requi
 ## 4. PWA install and offline requirements
 
 - Deploy on HTTPS; Firebase Hosting provides HTTPS for its hosted domains. Configure a custom domain and authorized Auth domains if needed.
-- Replace the single SVG icon with verified install icons in PNG sizes 192×192 and 512×512 (plus the platform sizes you target), and list them in `pwa/manifest.json`.
+- Verify the included PNG install icons at 192×192 and 512×512 and add any extra platform sizes/screenshots your target stores require.
 - Verify manifest metadata, screenshots, maskable icon safe area, install behavior, update prompts, offline fallback, and cache invalidation on real Android/iOS/desktop browsers.
 - Decide which user data may be cached locally. Add secure sync/retry semantics before claiming offline writes synchronize across devices.
 - Add a Content Security Policy and other production headers after deciding how Firebase SDK and any identity providers load. Keep the service worker cache limited to versioned app-shell assets.
